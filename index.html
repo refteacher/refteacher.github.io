@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Deformable Neural Radiance Fields creates free-viewpoint portraits (nerfies) from casually captured videos.">
+  <meta name="keywords" content="Nerfies, D-NeRF, NeRF">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RefTeacher: A Strong Baseline for Semi-Supervised Referring Expression Comprehension</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">RefTeacher: A Strong Baseline for Semi-Supervised Referring Expression Comprehension</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?hl=en&user=34AXcvIAAAAJ">Jiamu Sun</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://luogen1996.github.io/">Gen Luo</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=w3_2ep0AAAAJ&hl=en">Yiyi Zhou</a><sup>1*</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://sites.google.com/view/xssun">XiaoShuai Sun</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=yw-rcj4AAAAJ&hl=en">Guannan Jiang</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://github.com/wangzhiyu6">Zhiyu Wang</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://mac.xmu.edu.cn/rrji/">Rongrong Ji</a><sup>1</sup>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Xiamen University,</span>
+            <span class="author-block"><sup>2</sup>Contemporary Amperex Technology</span>
+          </div>
+          
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>*</sup>Corresponding author</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://github.com/Disguiser15/RefTeacher"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/Disguiser15/RefTeacher"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img src="./static/images/RefTeacher.jpg"/>
+      <h2 class="subtitle has-text-centered">
+        The overall semi-supervised REC framework of RefTeacher.
+      </h2>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Referring expression comprehension (REC) aims to locate
+            the target instance in an image according to a given
+            natural language expression. Existing REC approaches often
+            require a large number of instance-level annotations for
+            fully supervised learning, which are laborious and expensive.
+            In this paper, we present the first attempt of semi-supervised
+            learning for REC and propose a strong baseline
+            method called RefTeacher. Inspired by the recent progress
+            in computer vision, RefTeacher adopts a teacher-student
+            learning paradigm, where the teacher REC network predicts
+            pseudo-labels for optimizing the student one. This
+            paradigm allows REC models to exploit massive unlabeled
+            data based on a small fraction of labeled information,
+            greatly reducing the annotation costs. In particular, we
+            also identify two key challenges in semi-supervised REC,
+            namely, sparse supervision signals and worse pseudo-label
+            noise. To address these issues, we equip RefTeacher with
+            two novel designs called Attention-based Imitation Learning
+            (AIL) and Adaptive Pseudo-label Weighting (APW). AIL
+            can help the student network imitate the recognition behaviors
+            of the teacher, thereby obtaining sufficient supervision
+            signals. APW can help the model adaptively adjust
+            the contributions of pseudo-labels with varying qualities,
+            thus avoiding confirmation bias. To validate RefTeacher,
+            we conduct extensive experiments on three REC benchmark
+            datasets. Experimental results show that RefTeacher obtains
+            obvious gains over the fully supervised methods. More
+            importantly, using only 10% labeled data, our approach allows
+            the model to achieve near 100% fully supervised performance,
+            e.g., only -2.78% on RefCOCO.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <div class="columns is-centered">
+    
+    <!-- Concurrent Work. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Related Links</h2>
+
+        <div class="content has-text-justified">
+          <p>
+            There's a lot of excellent work that was introduced around the same time as ours.
+          </p>
+          <p>
+            <a href="https://ieeexplore.ieee.org/document/9470913">RealGIN</a>, <a href="https://openaccess.thecvf.com/content/ICCV2021/html/Deng_TransVG_End-to-End_Visual_Grounding_With_Transformers_ICCV_2021_paper.html">TransVG</a> and <a href="https://arxiv.org/abs/2204.07913">SimREC</a> are the base one-stage REC models we use.
+          </p>
+          <p>
+            We inspire from the semi-supervised learning methods such as <a href="https://arxiv.org/abs/2005.04757">STAC</a> and <a href="https://openaccess.thecvf.com/content/CVPR2022/html/Liu_Unbiased_Teacher_v2_Semi-Supervised_Object_Detection_for_Anchor-Free_and_Anchor-Based_CVPR_2022_paper.html">Unbiased Teacherv2</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Concurrent Work. -->
+
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link"
+         href="./static/videos/nerfies_paper.pdf">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/Disguiser15" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            This means you are free to borrow the <a
+              href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website,
+            we just ask that you link back to this page in the footer.
+            Please remember to remove the analytics code included in the header of the website which
+            you do not want on your website.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
